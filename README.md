@@ -1,1 +1,1 @@
-# thesis-topic-template
+# Template for the Thesis Topic Description
