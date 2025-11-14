@@ -1,0 +1,109 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+
+\pagestyle{empty}
+
+%\usepackage[ngerman]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[top=0.8in, bottom=0.8in, left=0.8in, right=0.8in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{paralist}
+\usepackage{lmodern}
+\usepackage[authoryear]{natbib}
+\usepackage{blindtext}
+\renewcommand\textbullet{\ensuremath{\bullet}}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\date{}
+
+\title{
+%\vspace*{-2cm} \includegraphics[width=16cm]{header.png}
+\includegraphics[width=6cm]{figures/stuttgart-vector.pdf}\hfill{\includegraphics[width=3cm]{figures/sqa_logo.png}}
+\quad \\ [0.5cm]
+{\large \textit{Master's Thesis (Master Softwaretechnik):}} \\ [1mm]
+{\Large Thesis Title}
+}
+
+\begin{document}
+	
+
+\maketitle
+
+\thispagestyle{empty}
+
+\vspace{-2.5cm}
+
+
+\subsection*{Background and Motivation}
+Modern deployment technologies such as Kubernetes, Terraform, Docker Compose, Ansible, 
+and AWS CloudFormation differ significantly in syntax, structure, and abstraction level. 
+This diversity makes it challenging to transform deployment models into a unified, 
+technology-independent representation.  
+
+The Essential Deployment Metamodel (EDMM) provides such an abstraction \cite{Wurster2019TheED}, 
+but existing approaches like the Deployment Model Abstraction Framework (DeMAF) rely 
+heavily on manually defined rules for each technology \cite{Weller2022TheDM}. 
+This rule-based structure limits scalability, requires continuous maintenance, and makes 
+it difficult to support new technologies or updated versions.  
+
+Recent advances in Large Language Models (LLMs) demonstrate strong capabilities in 
+understanding structured configuration files (e.g., YAML, JSON) and extracting 
+abstract concepts \cite{Minaee2024LargeLM}. 
+This motivates the exploration of LLM-based methods as a flexible alternative for 
+generating EDMM-compliant deployment models.
+
+
+
+\subsection*{Goals}
+The goal of this thesis is to design and evaluate an LLM-based method for transforming 
+deployment models into EDMM representations. The main objectives are:
+\begin{itemize}
+    \item Develop a Retrieval-Augmented Generation (RAG) pipeline using Ollama, 
+          Hugging Face embeddings, and ChromaDB.
+    \item Automatically generate EDMM-compliant models from different deployment 
+          technologies.
+    \item Compare the LLM-based approach with rule-based methods regarding correctness, 
+          flexibility, and required maintenance effort.
+    \item Optionally, if time permits, conduct lightweight fine-tuning experiments 
+          (e.g., LoRA) to investigate performance differences between RAG-only and 
+          fine-tuned approaches.
+\end{itemize}
+
+\subsection*{Possible Collaborations}
+Collaboration with the EDMM and DeMAF research teams at the University of Stuttgart 
+may be possible, particularly for validating generated EDMM models and aligning the 
+transformation process with existing tooling. Additional collaboration opportunities 
+may arise with researchers working on RAG pipelines, LLM-based code analysis, or 
+fine-tuning techniques to support the methodological aspects of the thesis.
+
+\begin{scriptsize}
+\bibliographystyle{abbrv}
+\bibliography{bibliography.bib}
+\end{scriptsize}
+
+\subsection*{Contact}
+Prof. Dr.-Ing. Steffen Becker, steffen.becker@iste.uni-stuttgart.de \\
+University of Stuttgart, Institute of Software Engineering, Software Quality and Architecture Group \\
+
+\subsection*{Contact}
+Prof. Dr.-Ing. Steffen Becker \\
+steffen.becker@iste.uni-stuttgart.de \\
+University of Stuttgart, Institute of Software Engineering \\
+Software Quality and Architecture (SQA) Group \\[0.4cm]
+
+Marcel Weller, M. Sc. \\
+marcel.weller@iste.uni-stuttgart.de \\
+Research Assistant, Doctoral Researcher \\
+University of Stuttgart, Institute of Software Engineering \\
+Software Quality and Architecture (SQA) Group \\[0.4cm]
+
+
+\end{document}
+
